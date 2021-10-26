@@ -1,0 +1,17 @@
+<h1>User info</h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <%= @user.errors.count %>error prohibited this obj from being saved
+    <%= @user.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>  
+  <h4>Name</h4>
+  <%= f.text_field :name %>
+  <h4>Image</h4>
+  <%= f.attachment_field :profile_image %>
+  <h4>Introduction</h4>
+  <%= f.text_area :introduction %>
+  <%= f.submit 'Update User' %>
+<% end %>

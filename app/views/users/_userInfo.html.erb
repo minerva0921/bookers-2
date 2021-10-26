@@ -1,0 +1,53 @@
+<div class="col-sm-2 col-sm-offset-1">
+  <!--  depending upon user, change userProfile -->
+  <% if current_user.id == user.id %>
+  <div class="row">
+    <h1>UserInfo</h1>
+    <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, format:'jpeg', class:"img-circle pull-left profile-img", fallback:"no_image.jpg" %>
+    <table class="table">
+      <tr>
+        <th>name</th>
+        <th><%= current_user.name %></th>
+      </tr>
+      <tr>
+        <th>Introduction</th>
+        <th><%= current_user.introduction %></th>
+      </tr>
+    </table>
+      <%= link_to(edit_user_path(user), class:"btn btn-default btn-block edit_user_#{current_user.id}") do %>
+      <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+      <% end %>
+  </div>
+  <% else %>
+  <div class="row">
+    <h1>UserInfo</h1>
+    <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format:'jpeg', class:"img-circle pull-left profile-img", fallback:"no_image.jpg" %>
+    <table class="table">
+      <tr>
+        <th>name</th>
+        <th><%= user.name %></th>
+      </tr>
+      <tr>
+        <th>Introduction</th>
+        <th><%= user.introduction %></th>
+      </tr>
+    </table>
+  </div>
+  <% end %>
+  <div class="row">
+  <%= form_for(book) do |f| %>
+  <h1>New Book</h1>
+    <div class="form-group has-icon">
+      <label class="control-label sr-only">Title</label>
+      <%= f.text_field :title, class:"form-control book_title", placeholder:"Book Title" %>
+      <span class="fa fa-building form-control-icon" aria-hidden="true" ></span>
+    </div>
+    <div class="form-group has-icon">
+      <label class="control-label sr-only">Opinion</label>
+      <%= f.text_area :opinion, class:"form-control book_body", placeholder:"Your opinion about Book" %>
+      <span class="fa fa-building form-control-icon" aria-hidden="true" ></span>
+    </div>
+    <%= f.submit "Post it", class:"btn btn-primary btn-block btn-base-1 mt-20" %>
+  <% end %>
+  </div>
+</div>
