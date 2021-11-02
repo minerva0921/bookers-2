@@ -1,17 +1,17 @@
-<h1>Editing Book</h1>
-  <h4>Title</h4>
-  <h4>Opinion</h4>
-  <%= form_for(@book) do |f| %>
-    <% if @book.errors.any? %>
-      <%= @book.errors.count %>error prohibited this obj from being saved
-      <%= @book.errors.full_messages.each do |message| %>
-        <%= message %>
-      <% end %>
-    <% end %>  
-  	<h4>Title</h4>
-  	<%= f.text_field :title %>
-  	<h4>Opinion</h4>
-  	<%= f.text_area :body %>
-    <%= f.submit 'Update Book' %>
-  <% end %>
-  <%= link_to "Show",  book_path %>|<%= link_to "Back", books_path %>
+<%= render "books/book_error", book: @book %>
+
+<div class="container">
+  <div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+    <h1>Editing Book</h1>
+      <%= render 'books/error', model: @book %>
+      <%= render 'books/book', book: @book %>
+    <div class="menu">
+      <%= link_to "Show", book_path(@book) %>
+      |
+      <%= link_to "Back", books_path %>
+    </div>
+    </div>
+  <div class="col-xs-3"></div>
+ </div>
+</div>

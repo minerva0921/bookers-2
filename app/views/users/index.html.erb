@@ -1,39 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
-      <h1>User info</h1>
-      <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
-      <h4>name</h4>
-      <p><%= @user.name %></p>
-      <h4>introduction</h4>
-      <p><%= @user.introduction %></p>
-
-      <h1>New book</h1>
-      <%= form_for(@book) do |f| %>
-        <h4>Title</h4>
-        <%= f.text_field :title %>
-        <h4>Opinion</h4>
-        <%= f.text_area :body %>
-        <p><%= f.submit 'Create Book' %></p>
-      <% end %>
+      <%= render "users/user_info", user: @user, book: @book %>
+      <%= render "books/new_book", user: @user, book: @book %>
     </div>
+      <h1>Users</h1>
     <div class="col-xs-9">
-      <h2>Users</h2>
-      <table class="table">
+      <table class="table table-hover">
         <thead>
           <tr>
-          	<th>image</th>
-          	<th>name</th>
+            <th>image</th>
+            <th>name</th>
             <th></th>
           </tr>
         </thead>
-        <% @users.each do |user| %>
-        <tr>
-        	<td><%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", size:'30x30' %></td>
-        	<td><%= user.name %></td>
-        	<td><%= link_to "Show", user_path(user.id) %></td>
-        </tr>
-      <% end %>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <%= attachment_image_tag user, :profile_image, format: "jpeg",
+                  fallback: "no_image.jpg", size: "50x50" %>
+              </td>
+              <td>
+                <%= user.name %>
+              </td>
+              <td>
+                <%= link_to "Show", user_path(user.id) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
       </table>
     </div>
   </div>

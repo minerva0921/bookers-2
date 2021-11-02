@@ -1,17 +1,32 @@
-<h1>User info</h1>
-
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <%= @user.errors.count %>error prohibited this obj from being saved
-    <%= @user.errors.full_messages.each do |message| %>
-      <%= message %>
-    <% end %>
-  <% end %>  
-  <h4>Name</h4>
-  <%= f.text_field :name %>
-  <h4>Image</h4>
-  <%= f.attachment_field :profile_image %>
-  <h4>Introduction</h4>
-  <%= f.text_area :introduction %>
-  <%= f.submit 'Update User' %>
+<% if @user.errors.any? %>
+  <div class="error_explanation">
+    <ul>
+      <h2>
+        <%= @user.errors.count %>errors prohibited this obj from being saved:
+      </h2>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h1>User info</h1>
+      <%= form_for(@user) do |f| %>
+        <span>Name <%= f.text_field :name, autofocus: true %></span><br>
+        <p>Image</p>
+        <p>
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像",
+            class: "user-edit-form" %>
+        </p>
+        <p>
+          <span>Introduction <%= f.text_area :introduction %></span>
+        </p>
+        <%= f.submit "Update User" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -332,44 +332,44 @@ Failures:
   6) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Bookersリンクが表示される: 左上から1番目のリンクが「Bookers」である
      [31mFailure/Error: expect(home_link).to match(/Bookers/)[0m
      [31m[0m
-     [31m  expected " Home" to match /Bookers/[0m
+     [31m  expected "Home" to match /Bookers/[0m
      [31m  Diff:[0m[0m
      [31m  [0m[34m@@ -1 +1 @@[0m
      [31m  [0m[31m-/Bookers/[0m
-     [31m  [0m[32m+" Home"[0m
+     [31m  [0m[32m+"Home"[0m
      [31m  [0m[0m
      [36m# ./spec/system/01_before_login_spec.rb:52:in `block (4 levels) in <main>'[0m
 
   7) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Homeリンクが表示される: 左上から2番目のリンクが「Home」である
      [31mFailure/Error: expect(home_link).to match(/Home/)[0m
      [31m[0m
-     [31m  expected " About" to match /Home/[0m
+     [31m  expected "About" to match /Home/[0m
      [31m  Diff:[0m[0m
      [31m  [0m[34m@@ -1 +1 @@[0m
      [31m  [0m[31m-/Home/[0m
-     [31m  [0m[32m+" About"[0m
+     [31m  [0m[32m+"About"[0m
      [31m  [0m[0m
      [36m# ./spec/system/01_before_login_spec.rb:56:in `block (4 levels) in <main>'[0m
 
   8) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Aboutリンクが表示される: 左上から3番目のリンクが「About」である
      [31mFailure/Error: expect(about_link).to match(/About/)[0m
      [31m[0m
-     [31m  expected " sign up" to match /About/[0m
+     [31m  expected "Sign up" to match /About/[0m
      [31m  Diff:[0m[0m
      [31m  [0m[34m@@ -1 +1 @@[0m
      [31m  [0m[31m-/About/[0m
-     [31m  [0m[32m+" sign up"[0m
+     [31m  [0m[32m+"Sign up"[0m
      [31m  [0m[0m
      [36m# ./spec/system/01_before_login_spec.rb:60:in `block (4 levels) in <main>'[0m
 
   9) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Sign upリンクが表示される: 左上から4番目のリンクが「Sign up」である
      [31mFailure/Error: expect(signup_link).to match(/Sign up/)[0m
      [31m[0m
-     [31m  expected " login" to match /Sign up/[0m
+     [31m  expected "Log in" to match /Sign up/[0m
      [31m  Diff:[0m[0m
      [31m  [0m[34m@@ -1 +1 @@[0m
      [31m  [0m[31m-/Sign up/[0m
-     [31m  [0m[32m+" login"[0m
+     [31m  [0m[32m+"Log in"[0m
      [31m  [0m[0m
      [36m# ./spec/system/01_before_login_spec.rb:64:in `block (4 levels) in <main>'[0m
 
@@ -2358,7 +2358,7 @@ Failures:
        [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
        [36m# ./spec/system/03_finishing_touches_spec.rb:424:in `block (4 levels) in <main>'[0m
 
-Finished in 9.76 seconds (files took 1.6 seconds to load)
+Finished in 10.24 seconds (files took 1.37 seconds to load)
 [31m198 examples, 157 failures[0m
 
 Failed examples:

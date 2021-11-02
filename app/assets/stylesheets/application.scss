@@ -17,3 +17,57 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-dark .navbar-brand {
+  color: #fff;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.mx-auto {
+  margin-left: auto;
+}
+
+.books_table {
+  border-collapse: collapse;
+  text-align: left;
+  border-top: 1px solid grey;
+}
+
+.books_thead {
+  border-bottom: 2px solid grey;
+}
+
+.books_td{
+  border-top: 1px solid grey;
+}
+
+.error_explanation {
+  color: red;
+}
